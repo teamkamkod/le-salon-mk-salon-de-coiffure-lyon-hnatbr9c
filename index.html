@@ -1459,27 +1459,5 @@ Je suis très satisfaite du résultat qui correspond parfaitement à mes attente
     }, 4500);
   })();
 </script>
-<!-- KAMKOD:DEMO_START -->
-<script>
-(function(){
-  var URL = 'https://checkout.kamkod.com/?lead=ChIJnZRatMbr9EcR1KvczV3YPi8';
-  document.addEventListener('click', function(e){
-    var el = e.target.closest('a, button, [role="button"]');
-    if(!el || el.closest('form')) return;               /* formulaire -> endpoint contact */
-    if(el.classList.contains('cta')) { e.preventDefault(); window.location.href = URL; return; }
-    if(el.closest('header nav, nav')) return;           /* navigation interne de la démo */
-    var a = e.target.closest('a');
-    if(!a) return;                                      /* bouton seul hors nav: on laisse */
-    var href = a.getAttribute('href') || '';
-    if(href.charAt(0) === '#') return;                  /* ancres de section */
-    if(/^https?:|^\/\//i.test(href)) return;          /* lien externe réel */
-    e.preventDefault(); window.location.href = URL;     /* tel:, mailto:, javascript:… */
-  }, true);
-})();
-</script>
-<div id="kamkod-demo-banner" style="position:fixed;bottom:0;left:0;right:0;background:#000;color:#fff;padding:12px 16px;text-align:center;z-index:9999;font-family:system-ui,sans-serif;font-size:14px;">
-  Ceci est un aperçu de votre futur site — <a href="https://checkout.kamkod.com/?lead=ChIJnZRatMbr9EcR1KvczV3YPi8" style="color:#FFD700;font-weight:600;">activez-le maintenant</a>
-</div>
-<!-- KAMKOD:DEMO_END -->
 </body>
 </html>
